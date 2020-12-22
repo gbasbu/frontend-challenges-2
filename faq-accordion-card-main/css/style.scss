@@ -1,0 +1,170 @@
+$Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+$Soft-red: hsl(14, 88%, 65%);
+
+$Soft-violet: hsl(273, 75%, 66%);
+$Soft-blue: hsl(240, 73%, 65%);
+
+$Very-dark-grayish-blue: hsl(237, 12%, 33%);
+$Dark-grayish-blue: hsl(240, 6%, 50%);
+
+$Light-grayish-blue: hsl(240, 5%, 91%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient($Soft-violet, $Soft-blue);
+    min-height: 100vh;
+    .container{
+        width: 800px;
+        height: 400px;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        .col-1, .col-2, .box, .woman{
+            width: 400px;
+            height: 400px;
+        }
+        .col-1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .woman{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                background-image: url(../images/bg-pattern-desktop.svg);
+                background-position-x: -400px ;
+                background-position-y: -200px ;
+                background-repeat: no-repeat;
+                background-size: 180%;
+                img{
+                    margin-left: -150px;
+                }
+            }
+            .box{
+                position: absolute;
+                height: fit-content;
+                margin-left: -200px;
+                margin-top: 70px;
+            }
+        }
+        .col-2{
+            padding-top: 50px;
+            padding-right: 70px;
+            font-size: .7rem;
+            overflow-y: auto;
+            h1{
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 30px;
+            }
+            .contentBox{
+                border-bottom: 1px solid lightgray;
+                margin-bottom: 15px;
+                cursor: pointer;
+                .question{
+                    display: flex;
+                    justify-content: space-between;
+                    color: $Very-dark-desaturated-blue;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    img{
+                        margin-right: 10px;
+                    }
+                }
+                .content{
+                    font-size: .7rem;
+                    color: $Very-dark-grayish-blue;
+                    height: 0;
+                    transition: .5s;
+                    overflow-y: hidden;
+                    margin-bottom: 5px;
+                    color: $Dark-grayish-blue;
+                }
+            }
+            .question:hover{
+                color: $Soft-red;
+            }
+        }
+    }
+}
+.contentBox.active{
+    font-weight: 700;
+    img{
+        transform: rotate(180deg);
+    }
+}
+.contentBox.active .content {
+    padding-top: 5px;
+    padding-bottom: 30px;
+    font-weight: 300;
+}
+.attribution{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 30px;
+}
+@media only screen and (max-width: 375px) {
+    .container{
+        width: 350px!important;
+        height: 500px!important;
+        display: block!important;
+        margin-top: 130px;
+        margin-bottom: 100px;
+        .col-1{
+            width: 350px;
+            height: 0!important;
+            .woman{
+                width: 350px;
+                height: 200px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                margin-top: -90px;
+                background: none!important;
+                img{
+                    width: 250px;
+                    height: 150px;
+                    position: absolute;
+                    top: 0;
+                    left: 55%;
+                }
+            }
+            .box{
+                top: 0!important;
+                margin: 0!important;
+                img{
+                    width: 100px;
+                    height: 100px;
+                    margin-top: -45px;
+                    margin-left: 35px;
+                }
+            }
+        }
+        .col-2{
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 80px;
+            .content{
+                text-align: left;
+                padding-right: 30px;
+            }
+        }
+    }
+    .attribution{
+        position: absolute;
+        bottom: 0;
+        margin-bottom: -80px;
+    }
+}
