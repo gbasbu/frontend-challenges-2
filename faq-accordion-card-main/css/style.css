@@ -160,7 +160,7 @@ body .container .col-2 .question:hover {
   .attribution {
     position: absolute;
     bottom: 0;
-    margin-bottom: -80px;
+    margin-bottom: 50px;
   }
 }
 
